@@ -244,8 +244,8 @@ h1, h2, h3, h4, h5,
   .site-navbar {
     /* padding-top: 3rem; */
     /* padding-bottom: 3rem; */
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
