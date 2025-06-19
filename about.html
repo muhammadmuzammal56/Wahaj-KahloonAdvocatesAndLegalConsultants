@@ -120,57 +120,58 @@
     </div>
   
     <!-- Counter Section -->
-  <div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
-  <div class="container">
-    <div class="row text-center justify-content-center">
+    <div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
+      <div class="container">
+        <div class="row text-center justify-content-center">
 
-      <!-- Counter 1 -->
-      <div class="col-md-4 mb-4">
-        <div>
-          <!-- Larger Circle with Icon -->
-          <div
-            style="background-color: #FEE2B3; width: 130px; height: 130px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <img src="images/scales-of-justice.png" alt="icon" style="width: 60px; height: 60px;">
+          <!-- Counter 1 -->
+          <div class="col-md-4 mb-4">
+            <div>
+              <!-- Circle with Icon -->
+              <div
+                style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <img src="images/scales-of-justice.png" alt="icon" style="width: 50px; height: 50px;">
+              </div>
+              <!-- Counter -->
+              <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+                <span class="counter" data-number="600">0</span>+
+              </div>
+              <!-- Heading -->
+              <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Client Consultations</h4>
+            </div>
           </div>
-          <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-            <span class="counter" data-number="1000">0</span>+
+
+          <!-- Counter 2 -->
+          <div class="col-md-4 mb-4">
+            <div>
+              <div
+                style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <img src="images/sucess.png" alt="icon" style="width: 50px; height: 50px;">
+              </div>
+              <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+                <span class="counter" data-number="90">0</span>%
+              </div>
+              <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Successful Cases</h4>
+            </div>
           </div>
-          <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Client Consultations</h4>
+
+          <!-- Counter 3 -->
+          <div class="col-md-4 mb-4">
+            <div>
+              <div
+                style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <img src="images/ator.png" alt="icon" style="width: 50px; height: 50px;">
+              </div>
+              <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+                <span class="counter" data-number="15">0</span>+
+              </div>
+              <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Professional Attorneys</h4>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- Counter 2 -->
-      <div class="col-md-4 mb-4">
-        <div>
-          <div
-            style="background-color: #FEE2B3; width: 130px; height: 130px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <img src="images/sucess.png" alt="icon" style="width: 60px; height: 60px;">
-          </div>
-          <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-            <span class="counter" data-number="90">0</span>%
-          </div>
-          <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Successful Cases</h4>
-        </div>
-      </div>
-
-      <!-- Counter 3 -->
-      <div class="col-md-4 mb-4">
-        <div>
-          <div
-            style="background-color: #FEE2B3; width: 130px; height: 130px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <img src="images/ator.png" alt="icon" style="width: 60px; height: 60px;">
-          </div>
-          <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-            <span class="counter" data-number="15">0</span>+
-          </div>
-          <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Professional Attorneys</h4>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
-
 
 
 
@@ -292,7 +293,7 @@
               <button type="submit" class="btn btn-primary">Submit</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
-            <div id="formMessage" class="alert mt-3 w-100 text-center" style="display: none;"></div>
+            <div id="formMessage" class="text-center mt-3" style="display: none;"></div>
           </div>
         </form>
       </div>
@@ -316,61 +317,60 @@
   <script src="js/main.js"></script>
 
   <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
- <script>
-  $(document).ready(function () {
-    $('.datepicker').datepicker({
-      format: 'mm/dd/yyyy',
-      autoclose: true,
-      todayHighlight: true
-    });
+  <script>
+    $(document).ready(function () {
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true
+      });
 
-    $('#formMessage').hide();
+      $('#formMessage').hide();
 
-    $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault(); // Prevent default form submit
+      $('#appointmentForm').on('submit', function (e) {
+        e.preventDefault(); // stop form from submitting normally
 
-      const form = $(this);
-      const formMessage = $('#formMessage');
-      const submitBtn = form.find('button[type="submit"]');
+        var form = $(this);
+        var formMessage = $('#formMessage');
+        var submitBtn = form.find('button[type="submit"]');
 
-      // Clear message and disable button
-      formMessage.hide().removeClass('alert alert-success alert-danger');
-      submitBtn.prop('disabled', true).text("Submitting...");
+        formMessage.hide();
+        submitBtn.prop('disabled', true).text("Submitting...");
 
-      $.ajax({
-        method: 'POST',
-        url: 'https://formspree.io/f/mvgrqjkp',
-        data: form.serialize(),
-        dataType: "json",
-        success: function () {
-          formMessage
-            .addClass('alert alert-success')
-            .html('✅ Appointment request submitted successfully!')
-            .fadeIn();
+        $.ajax({
+          method: 'POST',
+          url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
+          data: form.serialize(),
+          dataType: "json",
+          success: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-success')
+              .text('✅ Appointment request submitted successfully!')
+              .fadeIn();
 
-          form.trigger("reset");
+            form.trigger("reset");
+            setTimeout(() => {
+              formMessage.fadeOut();
+              $('#appointmentModal').modal('hide');
+            }, 4000);
+          },
+          error: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-danger')
+              .text('❌ Something went wrong. Please try again later.')
+              .fadeIn();
 
-          setTimeout(() => {
-            formMessage.fadeOut();
-            $('#appointmentModal').modal('hide');
-          }, 4000);
-        },
-        error: function () {
-          formMessage
-            .addClass('alert alert-danger')
-            .html('❌ Something went wrong. Please try again later.')
-            .fadeIn();
-
-          setTimeout(() => formMessage.fadeOut(), 4000);
-        },
-        complete: function () {
-          submitBtn.prop('disabled', false).text("Submit");
-        }
+            setTimeout(() => formMessage.fadeOut(), 4000);
+          },
+          complete: function () {
+            submitBtn.prop('disabled', false).text("Submit");
+          }
+        });
       });
     });
-  });
-</script>
-
+  </script>
   <script>
     const counters = document.querySelectorAll('.counter');
 
