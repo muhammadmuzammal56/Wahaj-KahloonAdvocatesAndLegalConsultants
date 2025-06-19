@@ -507,8 +507,7 @@
 
           <div class="form-group">
             <label for="appointmentDate">Appointment Date</label>
-            <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
-              placeholder="MM/DD/YYYY" required>
+           <input type="text" class="form-control datepicker" id="appointmentDate" name="date" placeholder="MM/DD/YYYY" required>
           </div>
         </div>
 
@@ -543,18 +542,16 @@
 <script>
   $(document).ready(function () {
 
-    // When modal is shown, re-initialize datepicker so it autocloses
-    $('#appointmentModal').on('shown.bs.modal', function () {
-      $('#appointmentDate').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      }).datepicker('update', '');
+    // Initialize datepicker ONCE
+    $('#appointmentDate').datepicker({
+      format: 'mm/dd/yyyy',
+      autoclose: true,
+      todayHighlight: true
     });
 
-    // Optional: Clear the selected date when modal is hidden
+    // Clear date when modal is hidden (optional)
     $('#appointmentModal').on('hidden.bs.modal', function () {
-      $('#appointmentDate').datepicker('clearDates');
+      $('#appointmentDate').val('');
     });
 
     $('#formMessage').hide();
@@ -597,6 +594,7 @@
     });
   });
 </script>
+
 
 
 
