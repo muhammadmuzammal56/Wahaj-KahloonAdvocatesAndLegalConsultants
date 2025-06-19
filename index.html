@@ -479,7 +479,7 @@
     </div>
   </footer>
 
-  <!-- Appointment Modal -->
+  
  <!-- Appointment Modal -->
 <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
   aria-hidden="true">
@@ -533,7 +533,7 @@
     });
 
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault(); // prevent actual form submit
+      e.preventDefault(); // prevent default form submission
 
       var form = $(this);
       var formMessage = $('#formMessage');
@@ -542,13 +542,16 @@
         method: 'POST',
         url: form.attr('action'),
         data: form.serialize(),
-        dataType: "json",
+        headers: {
+          'Accept': 'application/json' // Prevent redirect
+        },
         success: function () {
           formMessage
             .removeClass()
             .addClass('text-success')
             .text('✅ Appointment request submitted successfully!');
           form.trigger("reset");
+          setTimeout(() => formMessage.fadeOut(), 4000);
         },
         error: function () {
           formMessage
@@ -560,6 +563,7 @@
     });
   });
 </script>
+
 
 
   </div>
