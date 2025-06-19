@@ -507,7 +507,8 @@
 
           <div class="form-group">
             <label for="appointmentDate">Appointment Date</label>
-           <input type="text" class="form-control datepicker" id="appointmentDate" name="date" placeholder="MM/DD/YYYY" required>
+            <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
+              placeholder="MM/DD/YYYY" required>
           </div>
         </div>
 
@@ -541,36 +542,29 @@
 <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
 <script>
   $(document).ready(function () {
-
-    // Initialize datepicker ONCE
-    $('#appointmentDate').datepicker({
+    $('.datepicker').datepicker({
       format: 'mm/dd/yyyy',
       autoclose: true,
       todayHighlight: true
     });
 
-    // Clear date when modal is hidden (optional)
-    $('#appointmentModal').on('hidden.bs.modal', function () {
-      $('#appointmentDate').val('');
-    });
-
     $('#formMessage').hide();
 
-    // Handle form submission via AJAX
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault();
+      e.preventDefault(); // stop form from submitting normally
 
       var form = $(this);
       var formMessage = $('#formMessage');
+      var submitBtn = form.find('button[type="submit"]');
+
       formMessage.hide();
+      submitBtn.prop('disabled', true).text("Submitting...");
 
       $.ajax({
         method: 'POST',
-        url: form.attr('action'),
+        url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
         data: form.serialize(),
-        headers: {
-          'Accept': 'application/json'
-        },
+        dataType: "json",
         success: function () {
           formMessage
             .removeClass()
@@ -579,7 +573,10 @@
             .fadeIn();
 
           form.trigger("reset");
-          setTimeout(() => formMessage.fadeOut(), 4000);
+          setTimeout(() => {
+            formMessage.fadeOut();
+            $('#appointmentModal').modal('hide');
+          }, 4000);
         },
         error: function () {
           formMessage
@@ -589,13 +586,14 @@
             .fadeIn();
 
           setTimeout(() => formMessage.fadeOut(), 4000);
+        },
+        complete: function () {
+          submitBtn.prop('disabled', false).text("Submit");
         }
       });
     });
   });
 </script>
-
-
 
 
 </body>
