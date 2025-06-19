@@ -77,8 +77,9 @@
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li>
-  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal">Book an Appointment</a>
-</li>
+                  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal">Book an
+                    Appointment</a>
+                </li>
 
               </ul>
             </nav>
@@ -478,63 +479,65 @@
     </div>
   </footer>
 
-<!-- Appointment Modal -->
-<div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form id="appointmentForm">
-        <div class="modal-header">
-          <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-
-          <div class="form-group">
-            <label for="appointmentName">Name</label>
-            <input type="text" class="form-control" id="appointmentName" name="name" required>
+  <!-- Appointment Modal -->
+  <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <form id="appointmentForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
 
-          <div class="form-group">
-            <label for="appointmentEmail">Email</label>
-            <input type="email" class="form-control" id="appointmentEmail" name="email" required>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label for="appointmentName">Name</label>
+              <input type="text" class="form-control" id="appointmentName" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="appointmentEmail">Email</label>
+              <input type="email" class="form-control" id="appointmentEmail" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="appointmentDate">Appointment Date</label>
+              <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
+                placeholder="MM/DD/YYYY" required>
+            </div>
+
           </div>
 
-          <div class="form-group">
-            <label for="appointmentDate">Appointment Date</label>
-            <input type="text" class="form-control datepicker" id="appointmentDate" name="date" placeholder="MM/DD/YYYY" required>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
 
-        </div>
-
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        </div>
-
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<script>
-  $(document).ready(function () {
-    $('.datepicker').datepicker({
-      format: 'mm/dd/yyyy',
-      autoclose: true,
-      todayHighlight: true
-    });
+  <script>
+    $(document).ready(function () {
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true
+      });
 
-    $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault();
-      // You can handle submission here (e.g., Formspree, backend API)
-      alert('Appointment submitted!');
-      $('#appointmentModal').modal('hide');
-      this.reset();
+      $('#appointmentForm').on('submit', function (e) {
+        e.preventDefault();
+        // You can handle submission here (e.g., Formspree, backend API)
+        alert('Appointment submitted!');
+        $('#appointmentModal').modal('hide');
+        this.reset();
+      });
     });
-  });
-</script>
+  </script>
 
   </div>
 

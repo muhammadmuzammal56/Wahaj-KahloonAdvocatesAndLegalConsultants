@@ -291,30 +291,28 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 
-  var counter = function() {
-		
-		$('#about-section').waypoint( function( direction ) {
+ var counter = function () {
+  var executed = false;
+  $(window).scroll(function () {
+    if (!executed && $(window).scrollTop() + $(window).height() > $('.number').offset().top - 100) {
+      executed = true;
+      var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',');
+      $('.number > span').each(function () {
+        var $this = $(this),
+          num = $this.data('number');
+        $this.animateNumber(
+          {
+            number: num,
+            numberStep: comma_separator_number_step
+          },
+          3000
+        );
+      });
+    }
+  });
+};
+counter();
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number > span').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
-	}
-	counter();
 
 	var accordion = function() {
 		$('.btn-link[aria-expanded="true"]').closest('.accordion-item').addClass('active');
