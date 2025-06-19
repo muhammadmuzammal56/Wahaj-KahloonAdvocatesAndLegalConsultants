@@ -481,9 +481,10 @@
 
   
  <!-- Appointment Modal -->
+<!-- Appointment Modal -->
 <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document"> <!-- THIS LINE IS IMPORTANT -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form id="appointmentForm" action="https://formspree.io/f/mvgrqjkp" method="POST">
         <div class="modal-header">
@@ -509,34 +510,38 @@
             <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
               placeholder="MM/DD/YYYY" required>
           </div>
-
-          <!-- Message area -->
-          <div id="formMessage" class="mt-2 text-center"></div>
         </div>
 
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
+
+        <!-- Message area shown below buttons -->
+        <div id="formMessage" class="text-center mb-3"></div>
       </form>
     </div>
   </div>
 </div>
 
-
+<!-- JavaScript Code -->
 <script>
   $(document).ready(function () {
+    // Initialize datepicker
     $('.datepicker').datepicker({
       format: 'mm/dd/yyyy',
       autoclose: true,
       todayHighlight: true
     });
 
+    $('#formMessage').hide(); // Initially hide message
+
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault(); // prevent default form submission
+      e.preventDefault(); // prevent actual form submit
 
       var form = $(this);
       var formMessage = $('#formMessage');
+      formMessage.hide(); // Reset
 
       $.ajax({
         method: 'POST',
@@ -549,20 +554,28 @@
           formMessage
             .removeClass()
             .addClass('text-success')
-            .text('✅ Appointment request submitted successfully!');
+            .text('✅ Appointment request submitted successfully!')
+            .fadeIn();
+
           form.trigger("reset");
+
+          // Auto-hide after 4s
           setTimeout(() => formMessage.fadeOut(), 4000);
         },
         error: function () {
           formMessage
             .removeClass()
             .addClass('text-danger')
-            .text('❌ Something went wrong. Please try again later.');
+            .text('❌ Something went wrong. Please try again later.')
+            .fadeIn();
+
+          setTimeout(() => formMessage.fadeOut(), 4000);
         }
       });
     });
   });
 </script>
+
 
 
 
