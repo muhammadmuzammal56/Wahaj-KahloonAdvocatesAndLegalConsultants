@@ -5,7 +5,7 @@
   <title>WAHAJ & KAHLOON ADVOCATES AND LEGAL CONSULTANTS</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <!-- Favicon -->
+ <!-- Favicon --> 
   <link rel="icon" href="images/tabicon.png" type="image/png">
   <!-- Fonts and Stylesheets -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -58,6 +58,10 @@
                 </li>
               <li><a href="about.html" class="nav-link">About</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
+              <li>
+                  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal">Book an
+                    Appointment</a>
+                </li>
             </ul>
           </nav>
         </div>
@@ -246,20 +250,119 @@
   </div>
 </footer>
 </div>
+ <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <form id="appointmentForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-<!-- JS Scripts -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/main.js"></script>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="appointmentName">Name</label>
+              <input type="text" class="form-control" id="appointmentName" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="appointmentEmail">Email</label>
+              <input type="email" class="form-control" id="appointmentEmail" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="appointmentDate">Appointment Date</label>
+              <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
+                placeholder="MM/DD/YYYY" required>
+            </div>
+          </div>
+
+          <div class="modal-footer d-flex flex-column">
+            <div class="w-100 d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div id="formMessage" class="text-center mt-3" style="display: none;"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- External JS files (keep these first) -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
+  <script>
+    $(document).ready(function () {
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true
+      });
+
+      $('#formMessage').hide();
+
+      $('#appointmentForm').on('submit', function (e) {
+        e.preventDefault(); // stop form from submitting normally
+
+        var form = $(this);
+        var formMessage = $('#formMessage');
+        var submitBtn = form.find('button[type="submit"]');
+
+        formMessage.hide();
+        submitBtn.prop('disabled', true).text("Submitting...");
+
+        $.ajax({
+          method: 'POST',
+          url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
+          data: form.serialize(),
+          dataType: "json",
+          success: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-success')
+              .text('✅ Appointment request submitted successfully!')
+              .fadeIn();
+
+            form.trigger("reset");
+            setTimeout(() => {
+              formMessage.fadeOut();
+              $('#appointmentModal').modal('hide');
+            }, 4000);
+          },
+          error: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-danger')
+              .text('❌ Something went wrong. Please try again later.')
+              .fadeIn();
+
+            setTimeout(() => formMessage.fadeOut(), 4000);
+          },
+          complete: function () {
+            submitBtn.prop('disabled', false).text("Submit");
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
