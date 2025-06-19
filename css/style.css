@@ -1,4 +1,4 @@
-/* Base */
+Base
 body {
   line-height: 1.7;
   color: #364d59 !important;
@@ -237,30 +237,49 @@ h1, h2, h3, h4, h5,
   top: 0;
   width: 100%;
   padding: 1rem;
-  background: #fee2b3; }
-  @media (max-width: 991.98px) {
-    .site-navbar {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      padding-left: 0;
-      padding-right: 0; } }
-  .site-navbar .toggle-button {
-    position: absolute;
-    right: 0px; }
+  background: #fee2b3;
+}
+
+@media (max-width: 991.98px) {
+  .site-navbar {
+    /* padding-top: 3rem; */
+    /* padding-bottom: 3rem; */
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.site-navbar .toggle-button {
+  position: absolute;
+  right: 0px;
+}
+
+.site-navbar .site-logo {
+  margin: 0;
+  padding: 0;
+}
+
+.site-navbar .site-logo strong {
+  font-weight: 200;
+}
+
+.site-navbar .site-logo img {
+  color: #000;
+  width: 40%; /* Desktop logo size */
+}
+
+/* 🔥 Mobile-specific override to increase logo size */
+@media (max-width: 991.98px) {
   .site-navbar .site-logo {
-    margin: 0;
-    padding: 0;
-    }
-    .site-navbar .site-logo strong {
-      /* font-weight: 200px; */
-     }
-    .site-navbar .site-logo a {
-      color: #000; }
-    @media (max-width: 991.98px) {
-      .site-navbar .site-logo {
-        float: left;
-        position: relative;
-      width: 200px;} }
+    float: left;
+    position: relative;
+  }
+
+  .site-navbar .site-logo img {
+    width: 100%; /* Increased logo size for small screens */
+  }
+}
+
   .site-navbar .site-navigation.border-bottom {
     border-bottom: 1px solid white !important; }
   .site-navbar .site-navigation .site-menu {
