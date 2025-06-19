@@ -486,7 +486,7 @@
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <form id="appointmentForm" action="https://formspree.io/f/mvgrqjkp" method="POST">
+      <form id="appointmentForm">
         <div class="modal-header">
           <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -512,18 +512,18 @@
           </div>
         </div>
 
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <div class="modal-footer d-flex flex-column">
+          <div class="w-100 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+          <div id="formMessage" class="text-center mt-3" style="display: none;"></div>
         </div>
-
-        <!-- Message area shown below buttons -->
-        <div id="formMessage" class="text-center mb-3"></div>
       </form>
     </div>
   </div>
 </div>
-  </div>
+
 
  <!-- External JS files (keep these first) -->
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -551,19 +551,20 @@
     $('#formMessage').hide();
 
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault();
+      e.preventDefault(); // stop form from submitting normally
 
       var form = $(this);
       var formMessage = $('#formMessage');
+      var submitBtn = form.find('button[type="submit"]');
+
       formMessage.hide();
+      submitBtn.prop('disabled', true).text("Submitting...");
 
       $.ajax({
         method: 'POST',
-        url: form.attr('action'),
+        url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
         data: form.serialize(),
-        headers: {
-          'Accept': 'application/json'
-        },
+        dataType: "json",
         success: function () {
           formMessage
             .removeClass()
@@ -572,7 +573,10 @@
             .fadeIn();
 
           form.trigger("reset");
-          setTimeout(() => formMessage.fadeOut(), 4000);
+          setTimeout(() => {
+            formMessage.fadeOut();
+            $('#appointmentModal').modal('hide');
+          }, 4000);
         },
         error: function () {
           formMessage
@@ -582,6 +586,9 @@
             .fadeIn();
 
           setTimeout(() => formMessage.fadeOut(), 4000);
+        },
+        complete: function () {
+          submitBtn.prop('disabled', false).text("Submit");
         }
       });
     });
