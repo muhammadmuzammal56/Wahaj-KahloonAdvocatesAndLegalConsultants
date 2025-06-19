@@ -480,64 +480,78 @@
   </footer>
 
   <!-- Appointment Modal -->
-  <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <form id="appointmentForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-
-            <div class="form-group">
-              <label for="appointmentName">Name</label>
-              <input type="text" class="form-control" id="appointmentName" name="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="appointmentEmail">Email</label>
-              <input type="email" class="form-control" id="appointmentEmail" name="email" required>
-            </div>
-
-            <div class="form-group">
-              <label for="appointmentDate">Appointment Date</label>
-              <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
-                placeholder="MM/DD/YYYY" required>
-            </div>
-
-          </div>
-
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          </div>
-
-        </form>
-      </div>
-    </div>
+ <form id="appointmentForm" action="https://formspree.io/f/mvgrqjkp" method="POST">
+  <div class="modal-header">
+    <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-  <script>
-    $(document).ready(function () {
-      $('.datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
 
-      $('#appointmentForm').on('submit', function (e) {
-        e.preventDefault();
-        // You can handle submission here (e.g., Formspree, backend API)
-        alert('Appointment submitted!');
-        $('#appointmentModal').modal('hide');
-        this.reset();
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="appointmentName">Name</label>
+      <input type="text" class="form-control" id="appointmentName" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="appointmentEmail">Email</label>
+      <input type="email" class="form-control" id="appointmentEmail" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="appointmentDate">Appointment Date</label>
+      <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
+        placeholder="MM/DD/YYYY" required>
+    </div>
+
+    <!-- Message area -->
+    <div id="formMessage" class="mt-2 text-center"></div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+  </div>
+</form>
+
+<script>
+  $(document).ready(function () {
+    $('.datepicker').datepicker({
+      format: 'mm/dd/yyyy',
+      autoclose: true,
+      todayHighlight: true
+    });
+
+    $('#appointmentForm').on('submit', function (e) {
+      e.preventDefault(); // prevent actual form submit
+
+      var form = $(this);
+      var formMessage = $('#formMessage');
+
+      $.ajax({
+        method: 'POST',
+        url: form.attr('action'),
+        data: form.serialize(),
+        dataType: "json",
+        success: function () {
+          formMessage
+            .removeClass()
+            .addClass('text-success')
+            .text('✅ Appointment request submitted successfully!');
+          form.trigger("reset");
+        },
+        error: function () {
+          formMessage
+            .removeClass()
+            .addClass('text-danger')
+            .text('❌ Something went wrong. Please try again later.');
+        }
       });
     });
-  </script>
+  });
+</script>
+
 
   </div>
 
