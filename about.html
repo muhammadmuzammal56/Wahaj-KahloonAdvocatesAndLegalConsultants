@@ -292,7 +292,7 @@
               <button type="submit" class="btn btn-primary">Submit</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
-            <div id="formMessage" class="text-center mt-3" style="display: none;"></div>
+            <div id="formMessage" class="alert mt-3 w-100 text-center" style="display: none;"></div>
           </div>
         </form>
       </div>
@@ -316,60 +316,61 @@
   <script src="js/main.js"></script>
 
   <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
-  <script>
-    $(document).ready(function () {
-      $('.datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+ <script>
+  $(document).ready(function () {
+    $('.datepicker').datepicker({
+      format: 'mm/dd/yyyy',
+      autoclose: true,
+      todayHighlight: true
+    });
 
-      $('#formMessage').hide();
+    $('#formMessage').hide();
 
-      $('#appointmentForm').on('submit', function (e) {
-        e.preventDefault(); // stop form from submitting normally
+    $('#appointmentForm').on('submit', function (e) {
+      e.preventDefault(); // Prevent default form submit
 
-        var form = $(this);
-        var formMessage = $('#formMessage');
-        var submitBtn = form.find('button[type="submit"]');
+      const form = $(this);
+      const formMessage = $('#formMessage');
+      const submitBtn = form.find('button[type="submit"]');
 
-        formMessage.hide();
-        submitBtn.prop('disabled', true).text("Submitting...");
+      // Clear message and disable button
+      formMessage.hide().removeClass('alert alert-success alert-danger');
+      submitBtn.prop('disabled', true).text("Submitting...");
 
-        $.ajax({
-          method: 'POST',
-          url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
-          data: form.serialize(),
-          dataType: "json",
-          success: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-success')
-              .text('✅ Appointment request submitted successfully!')
-              .fadeIn();
+      $.ajax({
+        method: 'POST',
+        url: 'https://formspree.io/f/mvgrqjkp',
+        data: form.serialize(),
+        dataType: "json",
+        success: function () {
+          formMessage
+            .addClass('alert alert-success')
+            .html('✅ Appointment request submitted successfully!')
+            .fadeIn();
 
-            form.trigger("reset");
-            setTimeout(() => {
-              formMessage.fadeOut();
-              $('#appointmentModal').modal('hide');
-            }, 4000);
-          },
-          error: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-danger')
-              .text('❌ Something went wrong. Please try again later.')
-              .fadeIn();
+          form.trigger("reset");
 
-            setTimeout(() => formMessage.fadeOut(), 4000);
-          },
-          complete: function () {
-            submitBtn.prop('disabled', false).text("Submit");
-          }
-        });
+          setTimeout(() => {
+            formMessage.fadeOut();
+            $('#appointmentModal').modal('hide');
+          }, 4000);
+        },
+        error: function () {
+          formMessage
+            .addClass('alert alert-danger')
+            .html('❌ Something went wrong. Please try again later.')
+            .fadeIn();
+
+          setTimeout(() => formMessage.fadeOut(), 4000);
+        },
+        complete: function () {
+          submitBtn.prop('disabled', false).text("Submit");
+        }
       });
     });
-  </script>
+  });
+</script>
+
   <script>
     const counters = document.querySelectorAll('.counter');
 
