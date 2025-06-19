@@ -542,29 +542,38 @@
 <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
 <script>
   $(document).ready(function () {
-    $('.datepicker').datepicker({
-      format: 'mm/dd/yyyy',
-      autoclose: true,
-      todayHighlight: true
+
+    // When modal is shown, re-initialize datepicker so it autocloses
+    $('#appointmentModal').on('shown.bs.modal', function () {
+      $('#appointmentDate').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true
+      }).datepicker('update', '');
+    });
+
+    // Optional: Clear the selected date when modal is hidden
+    $('#appointmentModal').on('hidden.bs.modal', function () {
+      $('#appointmentDate').datepicker('clearDates');
     });
 
     $('#formMessage').hide();
 
+    // Handle form submission via AJAX
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault(); // stop form from submitting normally
+      e.preventDefault();
 
       var form = $(this);
       var formMessage = $('#formMessage');
-      var submitBtn = form.find('button[type="submit"]');
-
       formMessage.hide();
-      submitBtn.prop('disabled', true).text("Submitting...");
 
       $.ajax({
         method: 'POST',
-        url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
+        url: form.attr('action'),
         data: form.serialize(),
-        dataType: "json",
+        headers: {
+          'Accept': 'application/json'
+        },
         success: function () {
           formMessage
             .removeClass()
@@ -573,10 +582,7 @@
             .fadeIn();
 
           form.trigger("reset");
-          setTimeout(() => {
-            formMessage.fadeOut();
-            $('#appointmentModal').modal('hide');
-          }, 4000);
+          setTimeout(() => formMessage.fadeOut(), 4000);
         },
         error: function () {
           formMessage
@@ -586,14 +592,12 @@
             .fadeIn();
 
           setTimeout(() => formMessage.fadeOut(), 4000);
-        },
-        complete: function () {
-          submitBtn.prop('disabled', false).text("Submit");
         }
       });
     });
   });
 </script>
+
 
 
 </body>
