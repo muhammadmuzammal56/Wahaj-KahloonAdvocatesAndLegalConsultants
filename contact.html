@@ -369,25 +369,7 @@
               <button type="submit" class="btn btn-primary">Submit</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
-            <!-- <div id="appointmentFormMessage" class="text-center mt-3" style="display: none;"></div> -->
-            <!-- Success Alert -->
-<div id="formMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert"
-     style="display:none; transform: translateX(-100%); transition: transform 0.5s ease-in-out;">
-  <strong>Success!</strong> <span id="successText">Your appointment request has been submitted successfully.</span>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-<!-- Error Alert -->
-<div id="formError" class="alert alert-danger alert-dismissible fade show mt-3" role="alert"
-     style="display:none; transform: translateX(-100%); transition: transform 0.5s ease-in-out;">
-  <strong>Error!</strong> <span id="errorText">There was a problem submitting your request. Please try again later.</span>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
+            <div id="appointmentFormMessage" class="text-center mt-3" style="display: none;"></div>
           </div>
         </form>
       </div>
@@ -410,47 +392,54 @@
 
   <!-- Updated Form Submission Script for Modal -->
   <script>
-  var successAlert = $('#formMessage');
-var errorAlert = $('#formError');
+    $(document).ready(function () {
+      $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        autoclose: true,
+        todayHighlight: true
+      });
 
-// Hide both alerts before submission
-successAlert.hide().css('transform', 'translateX(-100%)');
-errorAlert.hide().css('transform', 'translateX(-100%)');
+      $('#appointmentForm').on('submit', function (e) {
+        e.preventDefault();
 
-$.ajax({
-  method: 'POST',
-  url: 'https://formspree.io/f/mvgrqjkp',
-  data: form.serialize(),
-  dataType: "json",
-  success: function () {
-    successAlert
-      .show()
-      .css('transform', 'translateX(0%)');
+        var form = $(this);
+        var formMessage = $('#appointmentFormMessage');
+        var submitBtn = form.find('button[type="submit"]');
 
-    form.trigger("reset");
-    setTimeout(() => {
-      successAlert.css('transform', 'translateX(-100%)');
-      setTimeout(() => {
-        successAlert.hide();
-        $('#appointmentModal').modal('hide');
-      }, 500);
-    }, 4000);
-  },
-  error: function () {
-    errorAlert
-      .show()
-      .css('transform', 'translateX(0%)');
+        formMessage.hide();
+        submitBtn.prop('disabled', true).text("Submitting...");
 
-    setTimeout(() => {
-      errorAlert.css('transform', 'translateX(-100%)');
-      setTimeout(() => errorAlert.hide(), 500);
-    }, 4000);
-  },
-  complete: function () {
-    submitBtn.prop('disabled', false).text("Submit");
-  }
-});
-
+        $.ajax({
+          method: 'POST',
+          url: 'https://formspree.io/f/mvgrqjkp',
+          data: form.serialize(),
+          dataType: "json",
+          success: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-success')
+              .text('✅ Appointment request submitted successfully!')
+              .fadeIn();
+            form.trigger("reset");
+            setTimeout(() => {
+              formMessage.fadeOut();
+              $('#appointmentModal').modal('hide');
+            }, 4000);
+          },
+          error: function () {
+            formMessage
+              .removeClass()
+              .addClass('text-danger')
+              .text('❌ Something went wrong. Please try again later.')
+              .fadeIn();
+            setTimeout(() => formMessage.fadeOut(), 4000);
+          },
+          complete: function () {
+            submitBtn.prop('disabled', false).text("Submit");
+          }
+        });
+      });
+    });
   </script>
 
 
