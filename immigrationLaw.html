@@ -14,12 +14,27 @@
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css"> 
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes jumpScale {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.10);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -64,9 +79,21 @@
                 </li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li>
-                  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal">Book an
-                    Appointment</a>
+                 <li>
+                  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #192732;
+      color: white !important;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      animation: jumpScale 1s infinite;
+      transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#192732'; this.style.transform='scale(1.1)'"
+                    onmouseout="this.style.backgroundColor='#192732'; this.style.transform='scale(1)'">
+                    Book an Appointment
+                  </a>
                 </li>
               </ul>
             </nav>
