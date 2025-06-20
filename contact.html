@@ -48,10 +48,10 @@
 
           <div class="col">
             <div class="site-logo">
-  <a href="index.html">
-    <img src="images/logo-removebg-preview.png" alt="Image" class="img-fluid">
-  </a>
-</div>
+              <a href="index.html">
+                <img src="images/logo-removebg-preview.png" alt="Image" class="img-fluid">
+              </a>
+            </div>
           </div>
 
           <div class="col-9 text-right text-lg-left">
@@ -326,119 +326,132 @@
     </footer>
 
   </div>
-<div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <form id="appointmentForm">
-            <div class="modal-header">
-              <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+  <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <form id="appointmentForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="appointmentName">Name</label>
+              <input type="text" class="form-control" id="appointmentName" name="name" required>
             </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="appointmentName">Name</label>
-                <input type="text" class="form-control" id="appointmentName" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="appointmentEmail">Email</label>
-                <input type="email" class="form-control" id="appointmentEmail" name="email" required>
-              </div>
-              <div class="form-group">
-  <label for="caseType">Case Type</label>
-  <select class="form-control" id="caseType" name="case_type" required>
-    <option value="">-- Select Case Type --</option>
-    <option value="Criminal Law">Criminal Law</option>
-    <option value="Cival Law">Cival Law</option>
-    <option value="Family Law">Family Law</option>
-    <option value="Cyber Crime Law">Cyber Crime Law</option>
-    <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
-    <option value="Immigration Law">Immigration Law</option>
-  </select>
+            <div class="form-group">
+              <label for="appointmentEmail">Email</label>
+              <input type="email" class="form-control" id="appointmentEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="caseType">Case Type</label>
+              <select class="form-control" id="caseType" name="case_type" required>
+                <option value="">-- Select Case Type --</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Cival Law">Cival Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Cyber Crime Law">Cyber Crime Law</option>
+                <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
+                <option value="Immigration Law">Immigration Law</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="appointmentDate">Appointment Date</label>
+              <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
+                placeholder="MM/DD/YYYY" required>
+            </div>
+          </div>
+          <div class="modal-footer d-flex flex-column">
+            <div class="w-100 d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <!-- <div id="appointmentFormMessage" class="text-center mt-3" style="display: none;"></div> -->
+            <!-- Success Alert -->
+<div id="formMessage" class="alert alert-success alert-dismissible fade show mt-3" role="alert"
+     style="display:none; transform: translateX(-100%); transition: transform 0.5s ease-in-out;">
+  <strong>Success!</strong> <span id="successText">Your appointment request has been submitted successfully.</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
-              <div class="form-group">
-                <label for="appointmentDate">Appointment Date</label>
-                <input type="text" class="form-control datepicker" id="appointmentDate" name="date" placeholder="MM/DD/YYYY" required>
-              </div>
-            </div>
-            <div class="modal-footer d-flex flex-column">
-              <div class="w-100 d-flex justify-content-between">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              </div>
-              <div id="appointmentFormMessage" class="text-center mt-3" style="display: none;"></div>
-            </div>
-          </form>
-        </div>
+
+<!-- Error Alert -->
+<div id="formError" class="alert alert-danger alert-dismissible fade show mt-3" role="alert"
+     style="display:none; transform: translateX(-100%); transition: transform 0.5s ease-in-out;">
+  <strong>Error!</strong> <span id="errorText">There was a problem submitting your request. Please try again later.</span>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <!-- External JS files -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+  <!-- External JS files -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
 
-    <!-- Updated Form Submission Script for Modal -->
-    <script>
-      $(document).ready(function () {
-        $('.datepicker').datepicker({
-          format: 'mm/dd/yyyy',
-          autoclose: true,
-          todayHighlight: true
-        });
+  <!-- Updated Form Submission Script for Modal -->
+  <script>
+  var successAlert = $('#formMessage');
+var errorAlert = $('#formError');
 
-        $('#appointmentForm').on('submit', function (e) {
-          e.preventDefault();
+// Hide both alerts before submission
+successAlert.hide().css('transform', 'translateX(-100%)');
+errorAlert.hide().css('transform', 'translateX(-100%)');
 
-          var form = $(this);
-          var formMessage = $('#appointmentFormMessage');
-          var submitBtn = form.find('button[type="submit"]');
+$.ajax({
+  method: 'POST',
+  url: 'https://formspree.io/f/mvgrqjkp',
+  data: form.serialize(),
+  dataType: "json",
+  success: function () {
+    successAlert
+      .show()
+      .css('transform', 'translateX(0%)');
 
-          formMessage.hide();
-          submitBtn.prop('disabled', true).text("Submitting...");
+    form.trigger("reset");
+    setTimeout(() => {
+      successAlert.css('transform', 'translateX(-100%)');
+      setTimeout(() => {
+        successAlert.hide();
+        $('#appointmentModal').modal('hide');
+      }, 500);
+    }, 4000);
+  },
+  error: function () {
+    errorAlert
+      .show()
+      .css('transform', 'translateX(0%)');
 
-          $.ajax({
-            method: 'POST',
-            url: 'https://formspree.io/f/mvgrqjkp',
-            data: form.serialize(),
-            dataType: "json",
-            success: function () {
-              formMessage
-                .removeClass()
-                .addClass('text-success')
-                .text('✅ Appointment request submitted successfully!')
-                .fadeIn();
-              form.trigger("reset");
-              setTimeout(() => {
-                formMessage.fadeOut();
-                $('#appointmentModal').modal('hide');
-              }, 4000);
-            },
-            error: function () {
-              formMessage
-                .removeClass()
-                .addClass('text-danger')
-                .text('❌ Something went wrong. Please try again later.')
-                .fadeIn();
-              setTimeout(() => formMessage.fadeOut(), 4000);
-            },
-            complete: function () {
-              submitBtn.prop('disabled', false).text("Submit");
-            }
-          });
-        });
-      });
-    </script>
+    setTimeout(() => {
+      errorAlert.css('transform', 'translateX(-100%)');
+      setTimeout(() => errorAlert.hide(), 500);
+    }, 4000);
+  },
+  complete: function () {
+    submitBtn.prop('disabled', false).text("Submit");
+  }
+});
+
+  </script>
 
 
 </body>
