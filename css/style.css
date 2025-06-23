@@ -331,7 +331,7 @@ h1, h2, h3, h4, h5,
         padding: 0px 0;
         margin-top: 20px;
         margin-left: 0px;
-        background: #fff;
+        background: #fee2b3;
         -webkit-transition: 0.2s 0s;
         -o-transition: 0.2s 0s;
         transition: 0.2s 0s; }
@@ -583,10 +583,10 @@ h1, h2, h3, h4, h5,
     .hero .intro h1 {
       /* color: #b83333; */
       color: #000;
-      font-size: 50px; }
+      font-size: 42px; }
       .hero .intro h3 {
       color: #fee2b3;
-      font-size: 30px; }
+      font-size: 24px; }
     .hero .intro strong {
       font-weight: 900; 
     color: #fee2b3;}
