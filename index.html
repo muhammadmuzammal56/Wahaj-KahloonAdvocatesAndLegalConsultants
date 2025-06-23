@@ -94,6 +94,7 @@
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
 
+
               </ul>
             </nav>
           </div>
@@ -104,7 +105,7 @@
 
 
 
-    <!-- <div class="hero overlay" style="background-image: url('images/BACKGROUND.jpg');">
+    <div class="hero overlay" style="background-image: url('images/BACKGROUND.jpg');">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -119,19 +120,20 @@
                   and professionalism. We specialize in civil, criminal, corporate, and family law, ensuring
                   personalized attention to every client.
                 </p>
-                <a href="#" data-toggle="modal" data-target="#appointmentModal" style="
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #192732;
-        color: white !important;
-        border-radius: 30px;
-        font-weight: bold;
-        text-align: center;
-        /* animation: jumpScale 1s infinite; */
-        transition: all 0.3s ease;
-        font-size: 16px;
-      " onmouseover="this.style.backgroundColor='#192732'; this.style.transform='scale(1.1)'"
+
+                <!-- Appointment Button -->
+                <a href="#appointmentSection" class="nav-link" style="
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #192732;
+      color: white !important;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      /* animation: jumpScale 1s infinite; */
+      transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#192732'; this.style.transform='scale(1.1)'"
                   onmouseout="this.style.backgroundColor='#192732'; this.style.transform='scale(1)'">
                   Book an Appointment
                 </a>
@@ -140,97 +142,13 @@
 
 
 
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="hero overlay" style="background-image: url('images/BACKGROUND.jpg');">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-12" style="margin-top: 100px;">
-
-            <div class="row align-items-center justify-content-between">
-
-              <div class="col-lg-5 intro">
-                <h1 class="text-white"><strong>WAHAJ & KAHLOON</strong> </h1>
-                <h3 class="text-white">ADVOCATES AND LEGAL CONSULTANTS</h3>
-                <p class="text-white">is a trusted law firm committed to providing expert legal solutions with integrity
-                  and professionalism. We specialize in civil, criminal, corporate, and family law, ensuring
-                  personalized attention to every client.</p>
-              </div>
-
-              <!-- <div class="col-lg-5">
-                  <form class="book-form">
-                    <h3>Book an Appointment</h3>
-                    <div class="row align-items-center">
-                      <div class="mb-3 mb-md-4 col-md-12">
-                        <input type="text" class="form-control" placeholder="Name">
-                      </div>
-                      <div class="mb-3 mb-md-4 col-md-12">
-                        <input type="email" class="form-control" placeholder="Email">
-                      </div>
-                      <div class="mb-3 mb-md-4 col-md-12">
-                        <div class="form-control-wrap">
-                          <input type="text" id="cf-4" placeholder="Select Date" class="form-control datepicker px-3">
-                          <span class="icon icon-date_range"></span>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <input type="submit" value="Book Appointment" class="btn btn-primary btn-block py-3">
-                      </div>
-                    </div>
-
-                  </form>
-
-                </div> -->
-              <div class="col-lg-5" style="
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-                <form id="inlineAppointmentForm">
-                  <h3>Request Free Consultation</h3>
-                  <div class="row align-items-center">
-                    <div class="mb-3 mb-md-4 col-md-12">
-                      <input type="text" name="name" class="form-control" placeholder="Name" required>
-                    </div>
-                    <div class="mb-3 mb-md-4 col-md-12">
-                      <input type="email" name="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    <div class="mb-3 mb-md-4 col-md-12">
-                      <select class="form-control" name="case_type" required>
-                        <option value="">-- Select Case Type --</option>
-                        <option value="Criminal Law">Criminal Law</option>
-                        <option value="Cival Law">Cival Law</option>
-                        <option value="Family Law">Family Law</option>
-                        <option value="Cyber Crime Law">Cyber Crime Law</option>
-                        <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
-                        <option value="Immigration Law">Immigration Law</option>
-                      </select>
-                    </div>
-                    <div class="mb-3 mb-md-4 col-md-12">
-                      <input type="text" name="date" class="form-control datepicker" placeholder="Select Date" required>
-                    </div>
-                    <div class="col-md-12">
-                      <input type="submit" value="Book Appointment" class="btn btn-primary btn-block py-3">
-                    </div>
-                    <div class="col-md-12 mt-3">
-                      <div id="inlineFormMessage" class="text-center" style="display: none;"></div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-
-            </div>
-
 
           </div>
         </div>
       </div>
     </div>
+
+
 
     <div class="site-section bg-light">
       <div class="container">
@@ -563,6 +481,56 @@
       </div>
     </div>
   </div>
+<!-- Inline Appointment Section -->
+<div id="appointmentSection" class="site-section bg-light" style="padding: 60px 0;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <form id="inlineAppointmentForm">
+          <h3 class="text-center mb-4">Book an Appointment</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <select class="form-control" name="case_type" required>
+                <option value="">-- Select Case Type --</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Cival Law">Cival Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Cyber Crime Law">Cyber Crime Law</option>
+                <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
+                <option value="Immigration Law">Immigration Law</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="date" class="form-control datepicker" placeholder="Appointment Date" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea name="case_description" class="form-control" rows="4" placeholder="Describe your case briefly..." required></textarea>
+          </div>
+
+          <div class="form-group text-center mt-4">
+            <button type="submit" class="btn btn-primary px-5 py-2">Submit</button>
+          </div>
+
+          <div class="text-center mt-3">
+            <div id="inlineFormMessage" style="display: none;"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
   <footer class="text-light pt-5 pb-4"
     style="position: relative; background-image: url('images/vecteezy_judge-gavel-with-justice-lawyers-having-team-meeting-at-law_51489712.jpg'); background-size: cover; background-position: center; z-index: 1;">
@@ -646,7 +614,8 @@
 
 
   <!-- Appointment Modal -->
-  <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
+  <!-- Appointment Modal -->
+  <!-- <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -698,7 +667,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
@@ -717,112 +686,53 @@
   <script src="js/main.js"></script>
 
   <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
-  <!-- <script>
-    $(document).ready(function () {
-      $('.datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
-
-      $('#formMessage').hide();
-
-      $('#appointmentForm').on('submit', function (e) {
-        e.preventDefault(); // stop form from submitting normally
-
-        var form = $(this);
-        var formMessage = $('#formMessage');
-        var submitBtn = form.find('button[type="submit"]');
-
-        formMessage.hide();
-        submitBtn.prop('disabled', true).text("Submitting...");
-
-        $.ajax({
-          method: 'POST',
-          url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
-          data: form.serialize(),
-          dataType: "json",
-          success: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-success')
-              .text('✅ Appointment request submitted successfully!')
-              .fadeIn();
-
-            form.trigger("reset");
-            setTimeout(() => {
-              formMessage.fadeOut();
-              $('#appointmentModal').modal('hide');
-            }, 4000);
-          },
-          error: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-danger')
-              .text('❌ Something went wrong. Please try again later.')
-              .fadeIn();
-
-            setTimeout(() => formMessage.fadeOut(), 4000);
-          },
-          complete: function () {
-            submitBtn.prop('disabled', false).text("Submit");
-          }
-        });
-      });
+ <script>
+  $(document).ready(function () {
+    $('.datepicker').datepicker({
+      format: 'mm/dd/yyyy',
+      autoclose: true,
+      todayHighlight: true
     });
 
+    $('#inlineAppointmentForm').on('submit', function (e) {
+      e.preventDefault(); // Stop form's default submit
 
+      var form = $(this);
+      var formMessage = $('#inlineFormMessage');
+      var submitBtn = form.find('button[type="submit"]');
 
+      formMessage.hide().removeClass();
+      submitBtn.prop('disabled', true).text("Submitting...");
 
-  </script> -->
+      $.ajax({
+        method: 'POST',
+        url: 'https://formspree.io/f/mvgrqjkp', // ✅ Your Formspree endpoint
+        data: form.serialize(),
+        dataType: "json",
+        success: function () {
+          formMessage
+            .addClass('alert alert-success')
+            .text('✅ Appointment request submitted successfully!')
+            .fadeIn();
 
-  <script>
-    $(document).ready(function () {
-      $('.datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        todayHighlight: true
-      });
+          form.trigger("reset");
+          setTimeout(() => formMessage.fadeOut(), 5000);
+        },
+        error: function () {
+          formMessage
+            .addClass('alert alert-danger')
+            .text('❌ Submission failed. Please try again later.')
+            .fadeIn();
 
-      $('#inlineAppointmentForm').on('submit', function (e) {
-        e.preventDefault();
-
-        var form = $(this);
-        var formMessage = $('#inlineFormMessage');
-        var submitBtn = form.find('input[type="submit"]');
-
-        formMessage.hide();
-        submitBtn.prop('disabled', true).val("Submitting...");
-
-        $.ajax({
-          method: 'POST',
-          url: 'https://formspree.io/f/mvgrqjkp', // ✅ Your Formspree endpoint
-          data: form.serialize(),
-          dataType: "json",
-          success: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-success')
-              .text('✅ Appointment request submitted successfully!')
-              .fadeIn();
-            form.trigger("reset");
-            setTimeout(() => formMessage.fadeOut(), 4000);
-          },
-          error: function () {
-            formMessage
-              .removeClass()
-              .addClass('text-danger')
-              .text('❌ Something went wrong. Please try again later.')
-              .fadeIn();
-            setTimeout(() => formMessage.fadeOut(), 4000);
-          },
-          complete: function () {
-            submitBtn.prop('disabled', false).val("Book Appointment");
-          }
-        });
+          setTimeout(() => formMessage.fadeOut(), 5000);
+        },
+        complete: function () {
+          submitBtn.prop('disabled', false).text("Submit");
+        }
       });
     });
-  </script>
+  });
+</script>
 
   <script>
     const counters = document.querySelectorAll('.counter');
