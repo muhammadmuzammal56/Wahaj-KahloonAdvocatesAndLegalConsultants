@@ -4,7 +4,9 @@
 <head>
   <title>WAHAJ & KAHLOON ADVOCATES AND LEGAL CONSULTANTS</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Favicon -->
   <link rel="icon" href="images/24e42522-92f5-44ce-93ae-c7cf7a044392_removalai_preview.png" type="image/png" width="32"
     height="32">
@@ -82,39 +84,36 @@
       transition: transform 0.3s ease;
     }
 
-    .logo-marquee {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
+  .logo-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 
-    .logo-track {
-      display: flex;
-      width: max-content;
-      align-items: center;
-      transform: translateX(0);
-      /* logos visible immediately */
-    }
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: 3000px; /* Adjust based on number/size of logos */
+  animation: scroll-logos 15s linear infinite;
+  will-change: transform;
+}
 
-    .logo-track.animate {
-      animation: scroll-logos 20s linear infinite;
-    }
+.logo-img {
+  height: 80px;
+  margin: 0 25px;
+  object-fit: contain;
+}
 
-    .logo-img {
-      height: 100px;
-      margin: 0 35px;
-      object-fit: contain;
-    }
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0px);
+  }
 
-    @keyframes scroll-logos {
-      0% {
-        transform: translateX(0);
-      }
+  100% {
+    transform: translateX(-1500px); /* Half of track width for seamless loop */
+  }
+}
 
-      100% {
-        transform: translateX(-50%);
-      }
-    }
   </style>
 
 </head>
@@ -1053,23 +1052,24 @@
   </script>
   <!-- Script to start trusted clients caresoul imediately -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
-        });
-      }, {
-        threshold: 0.2
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
       });
-
-      const logoTrack = document.querySelector(".logo-track");
-      if (logoTrack) {
-        observer.observe(logoTrack);
-      }
+    }, {
+      threshold: 0.2
     });
-  </script>
+
+    const logoTrack = document.querySelector(".logo-track");
+    if (logoTrack) {
+      observer.observe(logoTrack);
+    }
+  });
+</script>
+
 </body>
 
 </html>
