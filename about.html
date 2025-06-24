@@ -12,7 +12,6 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -20,24 +19,70 @@
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
-
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
-<style>
-@keyframes jumpScale {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.10); }
-  100% { transform: scale(1); }
-}
-</style>
+  <style>
+    @keyframes jumpScale {
+      0% {
+        transform: scale(1);
+      }
 
+      50% {
+        transform: scale(1.10);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .testimonials-section {
+      background-color: #f9f9f9;
+      font-family: 'Playfair Display', serif;
+      padding: 60px 0;
+    }
+
+    /* Mobile view */
+    @media (max-width: 767px) {
+      .testimonials-section {
+        padding: 60px 20px;
+        /* top-bottom 60px, left-right 20px */
+      }
+    }
+
+    .carousel-indicators li {
+      background-color: #bbb;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+
+    .carousel-indicators .active {
+      background-color: #d6a95c;
+    }
+
+    .carousel-indicators.custom-indicators {
+      margin-top: 40px;
+      justify-content: center;
+      display: flex;
+      position: relative;
+    }
+
+    /* Ensure carousel is draggable */
+    .carousel-inner {
+      user-select: none;
+      touch-action: pan-y;
+    }
+
+    .carousel-item {
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
 
 <body>
-
-
   <div class="site-wrap" id="home-section">
-
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -47,13 +92,9 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
-
     <header class="site-navbar site-navbar-target" role="banner">
-
       <div>
         <div class="row align-items-center position-relative">
-
           <div class="col">
             <div class="site-logo">
               <a href="index.html">
@@ -61,12 +102,9 @@
               </a>
             </div>
           </div>
-
           <div class="col-9 text-right text-lg-left">
-
             <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span
                   class="icon-menu h3 text-black"></span></a></span>
-
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -81,45 +119,20 @@
                     <li><a href="immigrationLaw.html">Immigration Law</a></li>
                   </ul>
                 </li>
-                <!-- <li><a href="testimonials.html" class="nav-link">Testimonials</a></li> -->
                 <li class="active"><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                 <!-- <li>
-                  <a href="#" class="nav-link" data-toggle="modal" data-target="#appointmentModal" style="
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #192732;
-      color: white !important;
-      border-radius: 30px;
-      font-weight: bold;
-      text-align: center;
-      animation: jumpScale 1s infinite;
-      transition: all 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#192732'; this.style.transform='scale(1.1)'"
-                    onmouseout="this.style.backgroundColor='#192732'; this.style.transform='scale(1)'">
-                    Book an Appointment
-                  </a>
-                </li> -->
               </ul>
             </nav>
           </div>
-
-
         </div>
       </div>
-
     </header>
 
-
-    <div class="hero overlay"
-      style="background-image: url('images/aboutus.jpg');">
-
+    <div class="hero overlay" style="background-image: url('images/aboutus.jpg');">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-12">
-
             <div class="row align-items-center justify-content-center">
-
               <div class="col-lg-10 text-center intro">
                 <h1 class="text-white"><strong>About Us</strong></h1>
                 <p class="text-white">At Wahaj & Kahloon Advocates, we provide strategic legal guidance with integrity,
@@ -128,39 +141,144 @@
                   professionalism. Whether you are an individual, a business, or an organization, we work diligently to
                   provide solutions tailored to your unique legal challenges.</p>
               </div>
-
-
             </div>
-
-
           </div>
         </div>
       </div>
     </div>
-  
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+      <div class="container">
+        <div
+          style="position: sticky; top: 0; background-color: #f9f9f9; z-index: 10; padding-bottom: 30px; position: relative;">
+          <div style="position: absolute; left: -13px; top: 0; width: 2px; height: 70%; background-color: #cb935d;">
+          </div>
+          <h6 style="text-transform: uppercase; color: #b38b59; letter-spacing: 2px;">Testimonials</h6>
+          <h2 style="font-size: 30px; color: #5f4c3b; font-weight: bold;">What Our <span style="color: #b38b59;">Clients
+              Say</span></h2>
+        </div>
+
+        <!-- Carousel Start -->
+        <div id="successStoriesCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+          <div class="carousel-inner">
+            <!-- Story 1 -->
+            <div class="carousel-item active">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“After my initial study permit was refused, I approached
+                    Wahaj & Kahloon. Mr. Wahaj Riaz Kahloon reviewed my case in detail, helped me strengthen my
+                    statement of purpose, and guided me through every step of the reapplication. Thanks to his
+                    expertise, my study permit was approved for the Spring 2026 intake. I owe my academic future in
+                    Canada to his dedicated support.”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Ali Shahid</h5>
+                  <span style="color: #888;">Admitted to Niagara University</span>
+                </div>
+              </div>
+            </div>
+            <!-- Story 2 -->
+            <div class="carousel-item">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“As the Legal Advisor for Union Estimating LLC, Wahaj Riaz
+                    Kahloon has been instrumental in handling our cross-border legal matters. His knowledge of both
+                    Canadian and Pakistani legal frameworks has added great value to our company.”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Muhammad Azeem</h5>
+                  <span style="color: #888;">CEO, Union Estimating LLC</span>
+                </div>
+              </div>
+            </div>
+            <!-- Story 3 -->
+            <div class="carousel-item">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“I was facing a difficult criminal case, but Mr. Wahaj
+                    handled everything with outstanding professionalism and dedication. He fought for my rights and
+                    achieved the best possible outcome. Truly a trustworthy advocate.”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Touqeer Abbas</h5>
+                  <span style="color: #888;">Client in Lahore High Court</span>
+                </div>
+              </div>
+            </div>
+            <!-- Story 4 -->
+            <div class="carousel-item">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“I had a complex family dispute, and Wahaj & Kahloon provided
+                    exceptional support throughout. They treated my case with empathy, confidentiality, and strong legal
+                    strategy. I’m thankful for their commitment.”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Abdullah Hassan</h5>
+                  <span style="color: #888;">Family Law Client</span>
+                </div>
+              </div>
+            </div>
+            <!-- Story 5 -->
+            <div class="carousel-item">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“We were caught in a long-standing business dispute that
+                    seemed headed to court. Wahaj & Kahloon suggested mediation as an alternative. Mr. Wahaj’s calm
+                    negotiation skills and clear legal understanding helped us reach a favorable settlement — saving us
+                    both time and money.”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Hassan Tariq</h5>
+                  <span style="color: #888;">Business Owner</span>
+                </div>
+              </div>
+            </div>
+            <!-- Story 6 -->
+            <div class="carousel-item">
+              <div style="max-width: 1600px; padding-left: 15px; text-align: left;">
+                <div style="font-size: 60px; color: #d6a95c; margin-bottom: 10px;">❝</div>
+                <div>
+                  <p style="font-size: 18px; color: #333;">“Wahaj & Kahloon guided me through my university admission
+                    and the entire Canadian study visa process with clarity and confidence. Wahaj Riaz Kahloon’s
+                    expertise in immigration law made a huge difference. Highly recommended for anyone needing honest
+                    and professional legal assistance!”</p>
+                  <div style="width: 50px; height: 2px; background-color: #d6a95c; margin: 20px 0;"></div>
+                  <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Taimoor Shahzad</h5>
+                  <span style="color: #888;">Student, Toronto Metropolitan University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators custom-indicators">
+            <li data-target="#successStoriesCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#successStoriesCarousel" data-slide-to="1"></li>
+            <li data-target="#successStoriesCarousel" data-slide-to="2"></li>
+            <li data-target="#successStoriesCarousel" data-slide-to="3"></li>
+            <li data-target="#successStoriesCarousel" data-slide-to="4"></li>
+            <li data-target="#successStoriesCarousel" data-slide-to="5"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
     <!-- Counter Section -->
     <div class="site-section bg-white" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
       <div class="container">
         <div class="row text-center justify-content-center">
-
-          <!-- Counter 1 -->
           <div class="col-md-4 mb-4">
             <div>
-              <!-- Circle with Icon -->
               <div
                 style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                 <img src="images/scales-of-justice.png" alt="icon" style="width: 50px; height: 50px;">
               </div>
-              <!-- Counter -->
               <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
                 <span class="counter" data-number="600">0</span>+
               </div>
-              <!-- Heading -->
               <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Client Consultations</h4>
             </div>
           </div>
-
-          <!-- Counter 2 -->
           <div class="col-md-4 mb-4">
             <div>
               <div
@@ -173,8 +291,6 @@
               <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Successful Cases</h4>
             </div>
           </div>
-
-          <!-- Counter 3 -->
           <div class="col-md-4 mb-4">
             <div>
               <div
@@ -187,152 +303,69 @@
               <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Professional Attorneys</h4>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-<!-- Success Stories Section -->
-<div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
-  <div class="container">
-    <h2 class="text-center mb-5" style="font-weight: bold; color: #222;">Success Stories – Wahaj & Kahloon</h2>
-    <p class="text-center mb-5" style="font-size: 16px; max-width: 700px; margin: auto; color: #555;">
-      At Wahaj & Kahloon – Advocates and Legal Consultants, client satisfaction and positive outcomes are at the heart of everything we do. Here's what our clients have to say about their journey with us:
-    </p>
 
-    <div id="successStoriesCarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-
-        <!-- Story 1 -->
-        <div class="carousel-item active text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“After my initial study permit was refused, I approached Wahaj & Kahloon. Mr. Wahaj Riaz Kahloon reviewed my case in detail, helped me strengthen my statement of purpose, and guided me through every step of the reapplication. Thanks to his expertise, my study permit was approved for the Spring 2026 intake. I owe my academic future in Canada to his dedicated support.”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Ali Shahid</h5>
-            <span style="color: #888;">Admitted to Niagara University</span>
-          </div>
-        </div>
-
-        <!-- Story 2 -->
-        <div class="carousel-item text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“As the Legal Advisor for Union Estimating LLC, Wahaj Riaz Kahloon has been instrumental in handling our cross-border legal matters. His knowledge of both Canadian and Pakistani legal frameworks has added great value to our company.”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Muhammad Azeem</h5>
-            <span style="color: #888;">CEO, Union Estimating LLC</span>
-          </div>
-        </div>
-
-        <!-- Story 3 -->
-        <div class="carousel-item text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“I was facing a difficult criminal case, but Mr. Wahaj handled everything with outstanding professionalism and dedication. He fought for my rights and achieved the best possible outcome. Truly a trustworthy advocate.”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Touqeer Abbas</h5>
-            <span style="color: #888;">Client in Lahore High Court</span>
-          </div>
-        </div>
-
-        <!-- Story 4 -->
-        <div class="carousel-item text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“I had a complex family dispute, and Wahaj & Kahloon provided exceptional support throughout. They treated my case with empathy, confidentiality, and strong legal strategy. I’m thankful for their commitment.”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Abdullah Hassan</h5>
-            <span style="color: #888;">Family Law Client</span>
-          </div>
-        </div>
-
-        <!-- Story 5 -->
-        <div class="carousel-item text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“We were caught in a long-standing business dispute that seemed headed to court. Wahaj & Kahloon suggested mediation as an alternative. Mr. Wahaj’s calm negotiation skills and clear legal understanding helped us reach a favorable settlement — saving us both time and money.”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Hassan Tariq</h5>
-            <span style="color: #888;">Business Owner</span>
-          </div>
-        </div>
-
-        <!-- Story 6 -->
-        <div class="carousel-item text-center">
-          <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 18px; color: #333;">“Wahaj & Kahloon guided me through my university admission and the entire Canadian study visa process with clarity and confidence. Wahaj Riaz Kahloon’s expertise in immigration law made a huge difference. Highly recommended for anyone needing honest and professional legal assistance!”</p>
-            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Taimoor Shahzad</h5>
-            <span style="color: #888;">Student, Toronto Metropolitan University</span>
-          </div>
-        </div>
-
+    <footer class="text-light py-5"
+      style="position: relative; background-image: url('images/bottom.jpg'); background-size: cover; background-position: center; z-index: 1;">
+      <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: -1;">
       </div>
-
-      <!-- Controls -->
-      <a class="carousel-control-prev" href="#successStoriesCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" style="filter: invert(100%);" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next" href="#successStoriesCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" style="filter: invert(100%);" aria-hidden="true"></span>
-      </a>
-    </div>
+      <div class="container">
+        <div class="row d-flex justify-content-between text-start flex-wrap">
+          <div style="max-width: 300px;" class="mb-4 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="text-uppercase mb-3 text-light">About Us</h5>
+              <p>In the complex landscape of law, where clarity is often obscured, we bring insight, precision, and
+                trusted counsel to guide you through.</p>
+            </div>
+            <ul class="list-inline mt-3">
+              <li class="list-inline-item"><a href="#" class="text-light"><i class="icon-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.linkedin.com/in/wahaj-riaz-kahloon/" target="_blank"
+                  class="text-light"><i class="icon-linkedin"></i></a></li>
+              <li class="list-inline-item"><a href="mailto:wahajkahloonn@gmail.com" class="text-light"><i
+                    class="icon-envelope"></i></a></li>
+              <li class="list-inline-item"><a href="https://wa.me/+923337476976" target="_blank" class="text-light"><i
+                    class="icon-whatsapp"></i></a></li>
+            </ul>
+          </div>
+          <div style="max-width: 220px;" class="mb-4 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="text-uppercase mb-3 text-light">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="text-light d-block py-1">About Us</a></li>
+                <li><a href="termsofservices.html" class="text-light d-block py-1">Terms of Service</a></li>
+                <li><a href="privacy.html" class="text-light d-block py-1">Privacy Policy</a></li>
+                <li><a href="contact.html" class="text-light d-block py-1">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div style="max-width: 250px;" class="mb-4 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="text-uppercase mb-3 text-light">Contact Information</h5>
+              <p class="mb-1"><i class="icon-map-marker"></i> 53-The Mall, Lahore, Pakistan</p>
+              <p class="mb-1"><i class="icon-phone"></i> +92 333 7476976</p>
+              <p><i class="icon-envelope"></i> wahajkahloonn@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div style="height: 1px; background-color: rgba(255, 255, 255, 0.2); "></div>
+        <div class="row mt-4 text-center">
+          <div class="col-12">
+            <p class="mb-0 small text-light">
+              ©
+              <script>document.write(new Date().getFullYear());</script> Wahaj & Kahloon Advocates. All rights reserved.
+              Developed by <a target="_blank" href="https://www.linkedin.com/in/muzammal56/" class="text-light">Muhammad
+                Muzammal</a>
+              <span class="mx-1">|</span>
+              <a target="_blank" href="https://github.com/muhammadmuzammal56" class="text-light">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-</div>
-
-<footer class="text-light py-5"
-  style="position: relative; background-image: url('images/bottom.jpg'); background-size: cover; background-position: center; z-index: 1;">
-  <!-- Overlay -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: -1;"></div>
-
-  <div class="container">
-    <!-- Footer Sections -->
-    <div class="row d-flex justify-content-between text-start flex-wrap">
-      <!-- About Us -->
-      <div style="max-width: 300px;" class="mb-4 d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="text-uppercase mb-3 text-light">About Us</h5>
-          <p>In the complex landscape of law, where clarity is often obscured, we bring insight, precision, and trusted counsel to guide you through.</p>
-        </div>
-        <ul class="list-inline mt-3">
-          <li class="list-inline-item"><a href="#" class="text-light"><i class="icon-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="https://www.linkedin.com/in/wahaj-riaz-kahloon/" target="_blank" class="text-light"><i class="icon-linkedin"></i></a></li>
-          <li class="list-inline-item"><a href="mailto:wahajkahloonn@gmail.com" class="text-light"><i class="icon-envelope"></i></a></li>
-          <li class="list-inline-item"><a href="https://wa.me/+923337476976" target="_blank" class="text-light"><i class="icon-whatsapp"></i></a></li>
-        </ul>
-      </div>
-
-      <!-- Quick Links -->
-      <div style="max-width: 220px;" class="mb-4 d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="text-uppercase mb-3 text-light">Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="about.html" class="text-light d-block py-1">About Us</a></li>
-            <li><a href="termsofservices.html" class="text-light d-block py-1">Terms of Service</a></li>
-            <li><a href="privacy.html" class="text-light d-block py-1">Privacy Policy</a></li>
-            <li><a href="contact.html" class="text-light d-block py-1">Contact Us</a></li>
-          </ul>
-        </div>
-      
-      </div>
-
-      <!-- Contact Info -->
-      <div style="max-width: 250px;" class="mb-4 d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="text-uppercase mb-3 text-light">Contact Information</h5>
-          <p class="mb-1"><i class="icon-map-marker"></i> 53-The Mall, Lahore, Pakistan</p>
-          <p class="mb-1"><i class="icon-phone"></i> +92 333 7476976</p>
-          <p><i class="icon-envelope"></i> wahajkahloonn@gmail.com</p>
-        </div>
-      </div>
-    </div>
-<div style="height: 1px; background-color: rgba(255, 255, 255, 0.2); "></div>
-
-    <!-- Footer Bottom -->
-    <div class="row mt-4 text-center">
-      <div class="col-12">
-        <p class="mb-0 small text-light">
-          &copy; <script>document.write(new Date().getFullYear());</script> Wahaj & Kahloon Advocates. All rights reserved.
-          Developed by <a target="_blank" href="https://www.linkedin.com/in/muzammal56/" class="text-light">Muhammad Muzammal</a>
-          <span class="mx-1">|</span>
-          <a target="_blank" href="https://github.com/muhammadmuzammal56" class="text-light">GitHub</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-  </div>
-
 
   <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel"
     aria-hidden="true">
@@ -342,39 +375,36 @@
           <div class="modal-header">
             <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">×</span>
             </button>
           </div>
-
           <div class="modal-body">
             <div class="form-group">
               <label for="appointmentName">Name</label>
               <input type="text" class="form-control" id="appointmentName" name="name" required>
             </div>
-
             <div class="form-group">
               <label for="appointmentEmail">Email</label>
               <input type="email" class="form-control" id="appointmentEmail" name="email" required>
             </div>
-<div class="form-group">
-  <label for="caseType">Case Type</label>
-  <select class="form-control" id="caseType" name="case_type" required>
-    <option value="">-- Select Case Type --</option>
-    <option value="Criminal Law">Criminal Law</option>
-    <option value="Cival Law">Cival Law</option>
-    <option value="Family Law">Family Law</option>
-    <option value="Cyber Crime Law">Cyber Crime Law</option>
-    <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
-    <option value="Immigration Law">Immigration Law</option>
-  </select>
-</div>
+            <div class="form-group">
+              <label for="caseType">Case Type</label>
+              <select class="form-control" id="caseType" name="case_type" required>
+                <option value="">-- Select Case Type --</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Cival Law">Cival Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Cyber Crime Law">Cyber Crime Law</option>
+                <option value="Alternative Dispute Resolution Law">Alternative Dispute Resolution Law</option>
+                <option value="Immigration Law">Immigration Law</option>
+              </select>
+            </div>
             <div class="form-group">
               <label for="appointmentDate">Appointment Date</label>
               <input type="text" class="form-control datepicker" id="appointmentDate" name="date"
                 placeholder="MM/DD/YYYY" required>
             </div>
           </div>
-
           <div class="modal-footer d-flex flex-column">
             <div class="w-100 d-flex justify-content-between">
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -387,9 +417,7 @@
     </div>
   </div>
 
-
-
-  <!-- External JS files (keep these first) -->
+  <!-- External JS files -->
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -403,7 +431,7 @@
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- ✅ CUSTOM FORM HANDLING SCRIPT — place this AFTER all scripts above -->
+  <!-- Form Handling Script -->
   <script>
     $(document).ready(function () {
       $('.datepicker').datepicker({
@@ -411,22 +439,17 @@
         autoclose: true,
         todayHighlight: true
       });
-
       $('#formMessage').hide();
-
       $('#appointmentForm').on('submit', function (e) {
-        e.preventDefault(); // stop form from submitting normally
-
+        e.preventDefault();
         var form = $(this);
         var formMessage = $('#formMessage');
         var submitBtn = form.find('button[type="submit"]');
-
         formMessage.hide();
         submitBtn.prop('disabled', true).text("Submitting...");
-
         $.ajax({
           method: 'POST',
-          url: 'https://formspree.io/f/mvgrqjkp', // ✅ your form endpoint
+          url: 'https://formspree.io/f/mvgrqjkp',
           data: form.serialize(),
           dataType: "json",
           success: function () {
@@ -435,7 +458,6 @@
               .addClass('text-success')
               .text('✅ Appointment request submitted successfully!')
               .fadeIn();
-
             form.trigger("reset");
             setTimeout(() => {
               formMessage.fadeOut();
@@ -448,7 +470,6 @@
               .addClass('text-danger')
               .text('❌ Something went wrong. Please try again later.')
               .fadeIn();
-
             setTimeout(() => formMessage.fadeOut(), 4000);
           },
           complete: function () {
@@ -458,21 +479,23 @@
       });
     });
   </script>
-   <script>
-    $('#successStoriesCarousel').carousel({
+
+  <!-- Carousel Initialization -->
+  <script>
+    $('#successStoriesCarousel, #successStoriesCarousel2').carousel({
       interval: 6000,
       pause: 'hover'
     });
   </script>
-  <script> 
-    const counters = document.querySelectorAll('.counter');
 
+  <!-- Counter Animation -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
     const animateCounter = (el) => {
       const target = +el.getAttribute('data-number');
       const duration = 2000;
       const increment = target / (duration / 20);
       let count = 0;
-
       const update = () => {
         count += increment;
         if (count < target) {
@@ -482,10 +505,8 @@
           el.textContent = target;
         }
       };
-
       update();
     };
-
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -494,12 +515,59 @@
         }
       });
     }, { threshold: 1 });
-
     counters.forEach(counter => observer.observe(counter));
   </script>
 
+  <!-- Carousel Drag Functionality -->
+  <script>
+    $(document).ready(function () {
+      const carousels = ['#successStoriesCarousel', '#successStoriesCarousel2'];
+      carousels.forEach(carouselId => {
+        const $carousel = $(carouselId);
+        let isDragging = false;
+        let startX, currentX;
+        let startTime;
 
+        $carousel.on('mousedown touchstart', function (e) {
+          isDragging = true;
+          startX = e.type === 'mousedown' ? e.pageX : e.originalEvent.touches[0].pageX;
+          startTime = new Date().getTime();
+          $carousel.carousel('pause');
+          e.preventDefault();
+        });
 
+        $carousel.on('mousemove touchmove', function (e) {
+          if (!isDragging) return;
+          currentX = e.type === 'mousemove' ? e.pageX : e.originalEvent.touches[0].pageX;
+        });
+
+        $carousel.on('mouseup touchend', function (e) {
+          if (!isDragging) return;
+          isDragging = false;
+          const endTime = new Date().getTime();
+          const timeDiff = endTime - startTime;
+          const distance = currentX - startX;
+
+          // Only trigger slide if drag is significant and quick
+          if (Math.abs(distance) > 50 && timeDiff < 500) {
+            if (distance > 0) {
+              $carousel.carousel('prev');
+            } else {
+              $carousel.carousel('next');
+            }
+          }
+          $carousel.carousel('cycle');
+        });
+
+        $carousel.on('mouseleave touchcancel', function () {
+          if (isDragging) {
+            isDragging = false;
+            $carousel.carousel('cycle');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
