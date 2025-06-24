@@ -24,6 +24,18 @@
   50%  { transform: scale(1.10); }
   100% { transform: scale(1); }
 }
+@media (max-width: 767px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center; /* <-- centers each column horizontally */
+    margin: 0;
+  }
+
+  footer .row > div {
+    text-align: center; /* <-- optional: center text content */
+  }
+}
+
 </style>
 
 </head>

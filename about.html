@@ -124,6 +124,17 @@
     transform: translateX(-1500px); /* Half of track width for seamless loop */
   }
 }
+@media (max-width: 767px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center; /* <-- centers each column horizontally */
+    margin: 0;
+  }
+
+  footer .row > div {
+    text-align: center; /* <-- optional: center text content */
+  }
+}
 
 
   </style>
