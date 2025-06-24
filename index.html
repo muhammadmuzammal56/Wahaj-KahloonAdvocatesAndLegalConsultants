@@ -81,6 +81,36 @@
     .carousel-item {
       transition: transform 0.3s ease;
     }
+
+    .logo-marquee {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .logo-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-logos 25s linear infinite;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 120px;
+      /* Increased from 60px to 80px */
+      margin: 0 35px;
+      object-fit: contain;
+    }
+
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   </style>
 
 </head>
@@ -481,11 +511,65 @@
     </div>
   </div>
 
-  <!-- Success Stories Section -->
-  <div class="testimonials-section bg-white ">
+
+
+  <div class="site-section bg-white" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
     <div class="container">
-      <div
-        style="position: sticky; top: 0; background-color: white; z-index: 10; padding-bottom: 30px; position: relative;">
+      <div class="row text-center justify-content-center">
+
+        <!-- Counter 1 -->
+        <div class="col-md-4 mb-4">
+          <div>
+            <!-- Circle with Icon -->
+            <div
+              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <img src="images/scales-of-justice.png" alt="icon" style="width: 50px; height: 50px;">
+            </div>
+            <!-- Counter -->
+            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+              <span class="counter" data-number="600">0</span>+
+            </div>
+            <!-- Heading -->
+            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Client Consultations</h4>
+          </div>
+        </div>
+
+        <!-- Counter 2 -->
+        <div class="col-md-4 mb-4">
+          <div>
+            <div
+              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <img src="images/sucess.png" alt="icon" style="width: 50px; height: 50px;">
+            </div>
+            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+              <span class="counter" data-number="90">0</span>%
+            </div>
+            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Successful Cases</h4>
+          </div>
+        </div>
+
+        <!-- Counter 3 -->
+        <div class="col-md-4 mb-4">
+          <div>
+            <div
+              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <img src="images/ator.png" alt="icon" style="width: 50px; height: 50px;">
+            </div>
+            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
+              <span class="counter" data-number="15">0</span>+
+            </div>
+            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Professional Attorneys</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Stories Section -->
+  <div class="testimonials-section bg-light ">
+    <div class="container">
+      <div style="position: sticky; top: 0; z-index: 10; padding-bottom: 30px; position: relative;">
         <div style="position: absolute; left: -13px; top: 0; width: 2px; height: 70%; background-color: #cb935d;">
         </div>
         <h6 style="text-transform: uppercase; color: #b38b59; letter-spacing: 2px;font-weight: bold;">Testimonials</h6>
@@ -597,63 +681,37 @@
     </div>
   </div>
 
+  <!-- Trusted Legal Advisors Section -->
+  <section class="trusted-logos py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="mb-3" style="color: #364d59; font-weight: bold;">
+        Trusted Legal Advisors For
+      </h2>
+      <p class="mb-4" style="color: #6c757d; font-size: 16px;">
+        We take pride in building long-term relationships with our clients, offering dependable legal solutions that
+        empower their growth.
+      </p>
 
+      <div class="logo-marquee">
+        <div class="logo-track">
+          <!-- Logos (repeat for seamless loop) -->
+          <img src="images/cl1.jpg" alt="Logo 1" class="logo-img" />
+          <img src="images/cl2.jpg" alt="Logo 2" class="logo-img" />
+          <img src="images/cl1.jpg" alt="Logo 1" class="logo-img" />
+          <img src="images/cl2.jpg" alt="Logo 2" class="logo-img" />
+          <img src="images/cl1.jpg" alt="Logo 1" class="logo-img" />
+          <img src="images/cl2.jpg" alt="Logo 2" class="logo-img" />
 
-  <div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
-    <div class="container">
-      <div class="row text-center justify-content-center">
-
-        <!-- Counter 1 -->
-        <div class="col-md-4 mb-4">
-          <div>
-            <!-- Circle with Icon -->
-            <div
-              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-              <img src="images/scales-of-justice.png" alt="icon" style="width: 50px; height: 50px;">
-            </div>
-            <!-- Counter -->
-            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-              <span class="counter" data-number="600">0</span>+
-            </div>
-            <!-- Heading -->
-            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Client Consultations</h4>
-          </div>
         </div>
-
-        <!-- Counter 2 -->
-        <div class="col-md-4 mb-4">
-          <div>
-            <div
-              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-              <img src="images/sucess.png" alt="icon" style="width: 50px; height: 50px;">
-            </div>
-            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-              <span class="counter" data-number="90">0</span>%
-            </div>
-            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Successful Cases</h4>
-          </div>
-        </div>
-
-        <!-- Counter 3 -->
-        <div class="col-md-4 mb-4">
-          <div>
-            <div
-              style="background-color: #FEE2B3; width: 100px; height: 100px; margin: 0 auto 20px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-              <img src="images/ator.png" alt="icon" style="width: 50px; height: 50px;">
-            </div>
-            <div class="number" style="font-size: 48px; font-weight: 700; color: #222;">
-              <span class="counter" data-number="15">0</span>+
-            </div>
-            <h4 style="margin-top: 10px; font-weight: bold; color: #333;">Professional Attorneys</h4>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
+  </section>
+
+
+
 
   <!-- Inline Appointment Section -->
-  <div id="appointmentSection" class="site-section bg-white" style="padding: 60px 0;">
+  <div id="appointmentSection" class="site-section bg-light" style="padding: 60px 0;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
