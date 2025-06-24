@@ -139,7 +139,7 @@
     </div>
   
     <!-- Counter Section -->
-    <div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
+    <div class="site-section bg-white" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
       <div class="container">
         <div class="row text-center justify-content-center">
 
@@ -191,7 +191,83 @@
         </div>
       </div>
     </div>
+<!-- Success Stories Section -->
+<div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="font-weight: bold; color: #222;">Success Stories – Wahaj & Kahloon</h2>
+    <p class="text-center mb-5" style="font-size: 16px; max-width: 700px; margin: auto; color: #555;">
+      At Wahaj & Kahloon – Advocates and Legal Consultants, client satisfaction and positive outcomes are at the heart of everything we do. Here's what our clients have to say about their journey with us:
+    </p>
 
+    <div id="successStoriesCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Story 1 -->
+        <div class="carousel-item active text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“After my initial study permit was refused, I approached Wahaj & Kahloon. Mr. Wahaj Riaz Kahloon reviewed my case in detail, helped me strengthen my statement of purpose, and guided me through every step of the reapplication. Thanks to his expertise, my study permit was approved for the Spring 2026 intake. I owe my academic future in Canada to his dedicated support.”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Ali Shahid</h5>
+            <span style="color: #888;">Admitted to Niagara University</span>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="carousel-item text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“As the Legal Advisor for Union Estimating LLC, Wahaj Riaz Kahloon has been instrumental in handling our cross-border legal matters. His knowledge of both Canadian and Pakistani legal frameworks has added great value to our company.”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Muhammad Azeem</h5>
+            <span style="color: #888;">CEO, Union Estimating LLC</span>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="carousel-item text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“I was facing a difficult criminal case, but Mr. Wahaj handled everything with outstanding professionalism and dedication. He fought for my rights and achieved the best possible outcome. Truly a trustworthy advocate.”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Touqeer Abbas</h5>
+            <span style="color: #888;">Client in Lahore High Court</span>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="carousel-item text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“I had a complex family dispute, and Wahaj & Kahloon provided exceptional support throughout. They treated my case with empathy, confidentiality, and strong legal strategy. I’m thankful for their commitment.”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Abdullah Hassan</h5>
+            <span style="color: #888;">Family Law Client</span>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="carousel-item text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“We were caught in a long-standing business dispute that seemed headed to court. Wahaj & Kahloon suggested mediation as an alternative. Mr. Wahaj’s calm negotiation skills and clear legal understanding helped us reach a favorable settlement — saving us both time and money.”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Hassan Tariq</h5>
+            <span style="color: #888;">Business Owner</span>
+          </div>
+        </div>
+
+        <!-- Story 6 -->
+        <div class="carousel-item text-center">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 18px; color: #333;">“Wahaj & Kahloon guided me through my university admission and the entire Canadian study visa process with clarity and confidence. Wahaj Riaz Kahloon’s expertise in immigration law made a huge difference. Highly recommended for anyone needing honest and professional legal assistance!”</p>
+            <h5 style="font-weight: bold; color: #000; margin-top: 15px;">Taimoor Shahzad</h5>
+            <span style="color: #888;">Student, Toronto Metropolitan University</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#successStoriesCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" style="filter: invert(100%);" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#successStoriesCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" style="filter: invert(100%);" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <footer class="text-light py-5"
   style="position: relative; background-image: url('images/bottom.jpg'); background-size: cover; background-position: center; z-index: 1;">
@@ -380,6 +456,12 @@
           }
         });
       });
+    });
+  </script>
+   <script>
+    $('#successStoriesCarousel').carousel({
+      interval: 6000,
+      pause: 'hover'
     });
   </script>
   <script> 
