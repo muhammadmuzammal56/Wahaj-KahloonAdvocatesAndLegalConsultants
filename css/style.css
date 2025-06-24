@@ -575,8 +575,9 @@ h1, h2, h3, h4, h5,
   position: relative;
   background-size: cover; }
   .hero, .hero > .container > .row {
-    height: 100vh;
-    min-height: 770px; }
+    /* height: 100vh;
+    min-height: 770px;  */
+  }
   .hero .intro {
     position: relative;
     z-index: 4; }
