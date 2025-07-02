@@ -5,7 +5,7 @@
   <title>WAHAJ & KAHLOON ADVOCATES AND LEGAL CONSULTANTS</title>
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
   <link rel="icon" href="images/24e42522-92f5-44ce-93ae-c7cf7a044392_removalai_preview.png" type="image/png">
@@ -24,6 +24,18 @@
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
   <style>
+    .about-section {
+      margin-top: 120px;
+      /* Default for desktop */
+    }
+
+    /* Mobile view: screen width up to 767px */
+    @media (max-width: 767px) {
+      .about-section {
+        margin-top: 50px;
+      }
+    }
+
     @keyframes jumpScale {
       0% {
         transform: scale(1);
@@ -95,48 +107,51 @@
       }
     }
 
-  .logo-marquee {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
+    .logo-marquee {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
 
-.logo-track {
-  display: flex;
-  align-items: center;
-  width: 3000px; /* Adjust based on number/size of logos */
-  animation: scroll-logos 15s linear infinite;
-  will-change: transform;
-}
+    .logo-track {
+      display: flex;
+      align-items: center;
+      width: 3000px;
+      /* Adjust based on number/size of logos */
+      animation: scroll-logos 15s linear infinite;
+      will-change: transform;
+    }
 
-.logo-img {
-  height: 80px;
-  margin: 0 25px;
-  object-fit: contain;
-}
+    .logo-img {
+      height: 80px;
+      margin: 0 25px;
+      object-fit: contain;
+    }
 
-@keyframes scroll-logos {
-  0% {
-    transform: translateX(0px);
-  }
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(0px);
+      }
 
-  100% {
-    transform: translateX(-1500px); /* Half of track width for seamless loop */
-  }
-}
-@media (max-width: 767px) {
-  footer .row {
-    flex-direction: column;
-    align-items: center; /* <-- centers each column horizontally */
-    margin: 0;
-  }
+      100% {
+        transform: translateX(-1500px);
+        /* Half of track width for seamless loop */
+      }
+    }
 
-  footer .row > div {
-    text-align: center; /* <-- optional: center text content */
-  }
-}
+    @media (max-width: 767px) {
+      footer .row {
+        flex-direction: column;
+        align-items: center;
+        /* <-- centers each column horizontally */
+        margin: 0;
+      }
 
-
+      footer .row>div {
+        text-align: center;
+        /* <-- optional: center text content */
+      }
+    }
   </style>
 </head>
 
@@ -187,40 +202,59 @@
       </div>
     </header>
 
-    <div class="hero overlay"
-      style="background-image: url('images/aboutus.jpg'); background-size: cover; background-position: center; padding: 140px 0">
+    <div class="site-section bg-white">
       <div class="container">
-        <div class="align-items-center justify-content-center">
-          <div class="col-lg-12">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-lg-10 text-center intro mt-lg-3">
-                <h1 class="text-white mb-4"><strong>About Us</strong></h1>
-                <p class="text-white" style="font-size: 20px; line-height: 1.8;text-align: justify;">
+        <section class="site-section about-section" style="padding: 40px 10px;">
+          <div class="container-fluid px-3">
+            <div class="row align-items-center"> <!-- align-items-center for vertical centering -->
+
+              <!-- Column 1: Left Side Image - vertically centered -->
+              <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+                <img src="images/aboutus.jpg" alt="About Us Image" class="img-fluid rounded shadow"
+                  style="max-height: 500px; width: 100%; object-fit: cover;">
+              </div>
+
+              <!-- Column 2: Right Side Text -->
+              <div class="col-md-7">
+                <h4 class="mb-3" style="font-weight: 700;">About Us</h4>
+
+                <p style="text-align: justify; font-size: 18px; line-height: 1.8;">
                   At <strong>WAHAJ & KAHLOON Advocates and Legal Consultants</strong>, we don’t just offer legal
                   services—we deliver peace of mind, clarity, and results.
                   With a foundation built on integrity, discretion, and unwavering dedication, we guide our clients
                   through legal complexities with confidence and care.
-                  <br>
+                </p>
+
+                <p style="text-align: justify; font-size: 18px; line-height: 1.8;">
                   We bring a modern approach to traditional advocacy—combining deep legal insight with real-world
-                  understanding. Whether you are navigating a personal legal issue, managing business risk, or
-                  protecting your reputation, we deliver tailored strategies that align with your unique goals.
-                  <br>
+                  understanding.
+                  Whether you are navigating a personal legal issue, managing business risk, or protecting your
+                  reputation,
+                  we deliver tailored strategies that align with your unique goals.
+                </p>
+
+                <p style="text-align: justify; font-size: 18px; line-height: 1.8;">
                   Our strength lies in our diversity of expertise—from criminal and civil litigation to immigration,
                   family law, and corporate advisory. We fight for justice, negotiate with purpose, and advocate with
                   unmatched precision.
-                  <br>
+                </p>
+
+                <p style="text-align: justify; font-size: 18px; line-height: 1.8;">
                   Every client matters. Every case counts. At WAHAJ & KAHLOON, we believe that trust is earned, not
-                  claimed—and we earn it by standing beside you, every step of the way.
-                  <br>
+                  claimed—
+                  and we earn it by standing beside you, every step of the way.
+                  <br><br>
                   <em>Let your legal matters rest in capable hands.</em><br>
                   <strong>Your case. Our commitment. Real results.</strong>
                 </p>
               </div>
+
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
+
 
     <section class="trusted-logos py-5 bg-light">
       <div class="container text-center">
@@ -680,24 +714,24 @@
   </script>
 
   <!-- Script to start trusted clients caresoul imediately -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      }, {
+        threshold: 0.2
       });
-    }, {
-      threshold: 0.2
-    });
 
-    const logoTrack = document.querySelector(".logo-track");
-    if (logoTrack) {
-      observer.observe(logoTrack);
-    }
-  });
-</script>
+      const logoTrack = document.querySelector(".logo-track");
+      if (logoTrack) {
+        observer.observe(logoTrack);
+      }
+    });
+  </script>
 
 
 </body>
