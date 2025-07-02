@@ -152,6 +152,12 @@
         /* <-- optional: center text content */
       }
     }
+    @media (max-width: 767px) {
+  .about-img {
+    height: 450px !important;
+    object-fit: cover;
+  }
+}
   </style>
 </head>
 
@@ -202,7 +208,7 @@
       </div>
     </header>
 
-    <div class="site-section bg-white">
+    <div class="site-section bg-light">
       <div class="container">
         <section class="site-section about-section" style="padding: 40px 10px;">
           <div class="container-fluid px-3">
@@ -210,8 +216,8 @@
 
               <!-- Column 1: Left Side Image - vertically centered -->
               <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 mb-md-0">
-                <img src="images/aboutus.jpg" alt="About Us Image" class="img-fluid rounded shadow"
-                  style="max-height: 500px; width: 100%; object-fit: cover;">
+                <img src="images/newabut1.png" alt="About Us Image" class="img-fluid rounded shadow about-img"
+                  style="width: 100%; object-fit: cover; max-height: 590px;">
               </div>
 
               <!-- Column 2: Right Side Text -->
@@ -256,7 +262,7 @@
     </div>
 
 
-    <section class="trusted-logos py-5 bg-light">
+    <section class="trusted-logos py-5 bg-white">
       <div class="container text-center">
         <h2 class="mb-3" style="color: #364d59; font-weight: bold;">
           Trusted Legal Advisors For
@@ -290,7 +296,7 @@
 
 
     <!-- Counter Section -->
-    <div class="site-section bg-white" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
+    <div class="site-section bg-light" style="padding: 60px 0; font-family: 'Playfair Display', serif;">
       <div class="container">
         <div class="row text-center justify-content-center">
           <div class="col-md-4 mb-4">
@@ -334,10 +340,10 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div class="testimonials-section">
+    <div class="testimonials-section bg-white">
       <div class="container">
         <div
-          style="position: sticky; top: 0; background-color: #f9f9f9; z-index: 10; padding-bottom: 30px; position: relative;">
+          style="position: sticky; top: 0; background-color: white; z-index: 10; padding-bottom: 30px; position: relative;">
           <div style="position: absolute; left: -13px; top: 0; width: 2px; height: 70%; background-color: #cb935d;">
           </div>
           <h6 style="text-transform: uppercase; color: #b38b59; letter-spacing: 2px; font-weight: bold;">Testimonials
