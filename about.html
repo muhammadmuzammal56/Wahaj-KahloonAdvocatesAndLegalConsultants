@@ -159,6 +159,31 @@
         object-fit: cover;
       }
     }
+    .our-story-section {
+  width: 100%;
+  background-color: #f8f5ef;
+  flex-direction: row;
+}
+
+.left-story {
+  background-color: #a68b60;
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.right-values {
+  background-color: #f8f5ef;
+  flex: 1 1 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.value-box {
+  flex: 1 1 220px;
+  max-width: 250px;
+  color: #6b5634;
+}
   </style>
 </head>
 
@@ -210,7 +235,7 @@
     </header>
 
     <div class="site-section bg-light">
-      <div class="container">
+      <div class="container" style="max-width: 1500px;">
         <section class="site-section about-section" style="padding: 40px 10px;">
           <div class="container-fluid px-3">
             <div class="row align-items-center"> <!-- align-items-center for vertical centering -->
@@ -218,7 +243,7 @@
               <!-- Column 1: Left Side Image - vertically centered -->
               <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 mb-md-0">
                 <img src="images/finalabt.jpg" alt="About Us Image" class="img-fluid rounded shadow about-img"
-                  style="width: 100%; object-fit: cover; max-height: 590px;">
+                  style="max-height: 590px; object-fit: contain;">
               </div>
 
               <!-- Column 2: Right Side Text -->
@@ -261,6 +286,41 @@
         </section>
       </div>
     </div>
+<section class="our-story-section d-flex flex-wrap">
+  <!-- Left Column -->
+  <div class="left-story p-5 text-white">
+    <h2 class="mb-4">Our Story</h2>
+    <p>
+      Saad Ahsan Residency and Citizenship is the visionary idea of Mr. Ahsan Khaliq, who laid the foundation of the company 2 decades ago as an immigration law firm.
+      He earned an L.L.B. from Pakistan and an MSc in Entrepreneurship from Glasgow, UK, and then returned to his home country.
+      He observed that the immigration sector in Pakistan needed improvement, so he started his own immigration law firm to offer streamlined, smooth, and reliable immigration programs by removing complexities.
+    </p>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-values d-flex flex-wrap align-items-start p-5">
+    <div class="value-box px-3 py-2">
+      <small class="text-uppercase">investment</small>
+      <h5 class="fw-bold">Ethics</h5>
+      <p>Ethics is the base value of any business, and we are proud of our code of ethics.</p>
+    </div>
+    <div class="value-box px-3 py-2">
+      <small class="text-uppercase">travel_rights</small>
+      <h5 class="fw-bold">Honesty</h5>
+      <p>Our success in immigration world is due to our honesty with our clients in providing best services.</p>
+    </div>
+    <div class="value-box px-3 py-2">
+      <small class="text-uppercase">travel_rights</small>
+      <h5 class="fw-bold">Passion</h5>
+      <p>Our passion for providing hassle-free immigration services makes us the first choice of people globally.</p>
+    </div>
+    <div class="value-box px-3 py-2">
+      <small class="text-uppercase">investment</small>
+      <h5 class="fw-bold">Excellence</h5>
+      <p>Ethics, honesty, and passion result in immigration excellence that depicts our approach to our clients.</p>
+    </div>
+  </div>
+</section>
 
 
     <section class="trusted-logos py-5 bg-white">
