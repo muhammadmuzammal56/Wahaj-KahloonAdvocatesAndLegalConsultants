@@ -1,12 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "kahloonadvocates.com" }],
-      "destination": "https://www.kahloonadvocates.com/:path*",
-      "permanent": true
-    }
-  ]
+  "trailingSlash": false
 }
